@@ -5,90 +5,23 @@
     <title>Aspherical Vibes - Unique Aesthetic Apparel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            background: linear-gradient(135deg, #16384c, #f9d423 60%);
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            color: #222;
-        }
-        header {
-            background: #222931;
-            color: #fbfbfb;
-            padding: 20px 0;
-            text-align: center;
-        }
-        nav {
-            background: #e8eaf6;
-            padding: 12px;
-            text-align: center;
-        }
-        nav a {
-            color: #16384c;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 20px;
-            font-size: 18px;
-            letter-spacing: 1px;
-        }
-        .hero {
-            text-align: center;
-            padding: 80px 20px 40px 20px;
-        }
-        .hero h2 {
-            font-size: 2.2rem;
-            color: #16384c;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            color: #525252;
-        }
-        .products {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 40px;
-            padding: 10px 0 30px 0;
-        }
-        .product {
-            background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 2px 14px rgba(30,30,60,0.08);
-            width: 250px;
-            padding: 22px;
-            text-align: center;
-        }
-        .product img {
-            width: 100%;
-            max-width: 190px;
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .product h3 {
-            color: #16384c;
-            font-size: 1.08em;
-        }
-        .product p {
-            color: #555;
-        }
-        .product button {
-            background: #f9d423;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            color: #16384c;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 8px;
-        }
-        .product strong {
-            color: #16384c;
-        }
-        footer {
-            background: #222931;
-            color: #bbb;
-            text-align: center;
-            padding: 18px 0;
-        }
+        body { background: linear-gradient(135deg, #16384c, #f9d423 60%); font-family: 'Segoe UI', sans-serif; margin: 0; color: #222;}
+        header { background: #222931; color: #fbfbfb; padding: 20px 0; text-align: center;}
+        nav { background: #e8eaf6; padding: 12px; text-align: center;}
+        nav a { color: #16384c; text-decoration: none; font-weight: bold; margin: 0 20px; font-size: 18px; letter-spacing: 1px;}
+        .hero { text-align: center; padding: 60px 15px 40px 15px;}
+        .main-categories { display: flex; flex-wrap: wrap; justify-content: center; gap: 38px; margin-bottom: 15px;}
+        .main-category { background: #fff; border-radius: 17px; box-shadow: 0 2px 16px rgba(30,30,60,0.10); width: 300px; padding: 18px 0 32px 0; text-align: center; position: relative;}
+        .main-category img { width: 88%; border-radius: 12px; margin-bottom: 14px;}
+        .main-category h2 { color: #16384c; margin: 5px 0;}
+        .main-category button { background: #f9d423; border: none; padding: 12px 34px; border-radius: 25px; color: #16384c; font-weight: bold; font-size: 17px; cursor: pointer;}
+        .designs-section { display: none; flex-wrap: wrap; justify-content: center; gap: 34px; margin-bottom: 22px;}
+        .design-card { background: #f0f3fa; border-radius: 12px; box-shadow: 0 1px 8px rgba(30,30,60,0.08); width: 200px; padding: 12px 5px 18px 5px; text-align: center;}
+        .design-card img { width: 85%; border-radius: 10px; margin-bottom: 8px;}
+        .design-card h3 { color: #16384c; margin-bottom: 4px; margin-top: 7px;}
+        .design-card .price { font-weight: bold; color: #16384c; margin-bottom: 8px;}
+        .design-card p { color: #444; font-size: 14px;}
+        footer { background: #222931; color: #bbb; text-align: center; padding: 18px 0; }
     </style>
 </head>
 <body>
@@ -106,36 +39,108 @@
         <h2>Discover Your Next Aesthetic!</h2>
         <p>Explore bold shirt and trouser designs—crafted for the modern wardrobe. Shop the new Aspherical Vibes collection today.</p>
     </div>
-    <div class="products">
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80" alt="Sunset Floral Set">
-            <h3>Sunset Floral Set</h3>
-            <p>Vibrant floral shirt with matching tropical print trousers.</p>
-            <p><strong>₹1000</strong></p>
-            <button>Buy Now</button>
+    <div class="main-categories">
+        <div class="main-category">
+            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=320&q=80" alt="Aesthetic Shirts">
+            <h2>Aesthetic Shirts</h2>
+            <p>Browse stylish premium shirt designs for every personality.</p>
+            <button onclick="showDesigns('shirts-section')">Look for designs</button>
         </div>
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=300&q=80" alt="Checkerboard Set">
-            <h3>Checkerboard Set</h3>
-            <p>Bold checkerboard shirt with modern plaid trousers for a standout look.</p>
-            <p><strong>₹120</strong></p>
-            <button>Buy Now</button>
+        <div class="main-category">
+            <img src="https://images.unsplash.com/photo-1519864601643-13ba1c7a0b98?auto=format&fit=crop&w=320&q=80" alt="Aspherical Trousers">
+            <h2>Aspherical Trousers</h2>
+            <p>Explore unique and trendy trouser styles, from formal to casual.</p>
+            <button onclick="showDesigns('trousers-section')">Look for designs</button>
         </div>
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1519864601643-13ba1c7a0b98?auto=format&fit=crop&w=300&q=80" alt="Tropical Leaf Set">
-            <h3>Tropical Leaf Set</h3>
-            <p>Green leaf print shirt paired with comfortable chino trousers.</p>
-            <p><strong>₹200</strong></p>
-            <button>Buy Now</button>
-        </div>
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=80" alt="Ocean Wave Denim">
-            <h3>Ocean Wave Denim</h3>
-            <p>Breezy ocean wave print shirt matched with classic denim jeans.</p>
-            <p><strong>₹300</strong></p>
-            <button>Buy Now</button>
+        <div class="main-category">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=320&q=80" alt="Full Set">
+            <h2>Full Sets</h2>
+            <p>Get the perfectly matched shirt and trouser sets for a complete look.</p>
+            <button onclick="showDesigns('sets-section')">Look for designs</button>
         </div>
     </div>
+
+    <!-- Aesthetic Shirts (20 designs) -->
+    <div id="shirts-section" class="designs-section">
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1600185365920-d3b297a81a58?auto=format&fit=crop&w=300&q=80" alt="Urban Navy Shirt"><h3>Urban Navy Shirt</h3><div class="price">₹1199</div><p>Minimal solid navy blue for everyday polish.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=300&q=80" alt="Crimson Block Shirt"><h3>Crimson Block Shirt</h3><div class="price">₹1050</div><p>Bicolour geometric design with a modern edge.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=80" alt="Sunset Floral Shirt"><h3>Sunset Floral Shirt</h3><div class="price">₹1000</div><p>Vibrant orange floral print, perfect for summer outings.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=300&q=80" alt="Checkerboard Shirt"><h3>Checkerboard Shirt</h3><div class="price">₹120</div><p>Trendy checker pattern for bold street style.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=300&q=80" alt="Leafy Vista Shirt"><h3>Leafy Vista Shirt</h3><div class="price">₹950</div><p>Leaf green prints for a soothing natural vibe.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1475189778702-5ec9941484ae?auto=format&fit=crop&w=300&q=80" alt="Minimal Tan Shirt"><h3>Minimal Tan Shirt</h3><div class="price">₹899</div><p>Classic tan shade, versatile for pairing.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Stone Grey Oxford"><h3>Stone Grey Oxford</h3><div class="price">₹1320</div><p>Urban grey with subtle check accents.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1484517186945-36de5c23619d?auto=format&fit=crop&w=300&q=80" alt="Coral Waves Shirt"><h3>Coral Waves Shirt</h3><div class="price">₹1050</div><p>Textured coral with slight wave detail for fresh impact.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=300&q=80" alt="Sunset Dot Shirt"><h3>Sunset Dot Shirt</h3><div class="price">₹1290</div><p>Dotted print, sunset tones, and modern cut.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80" alt="Ocean Wave Shirt"><h3>Ocean Wave Shirt</h3><div class="price">₹970</div><p>Blue hues with micro wave texture.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1530845641016-29d2236b7b36?auto=format&fit=crop&w=300&q=80" alt="Urban Black Stripe Shirt"><h3>Urban Black Stripe</h3><div class="price">₹1149</div><p>Pinstripe monochrome shirt, styled for city days.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Denim Print Shirt"><h3>Denim Print Shirt</h3><div class="price">₹1109</div><p>Denim-wash effect in superlight poplin.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519455953755-af066f52f1ea?auto=format&fit=crop&w=300&q=80" alt="Mango Summer Shirt"><h3>Mango Summer Shirt</h3><div class="price">₹1020</div><p>Yellow floral print for tropical holidays.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=300&q=80" alt="Wave Blue Shirt"><h3>Wave Blue Shirt</h3><div class="price">₹1399</div><p>Serene blue wave patterns in luxe cotton.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Urban White Shirt"><h3>Urban White Shirt</h3><div class="price">₹1150</div><p>Timeless and crisp for all occasions.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=300&q=80" alt="Night Sky Shirt"><h3>Night Sky Shirt</h3><div class="price">₹1090</div><p>Navy background with micro-dotted night sky style.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05c?auto=format&fit=crop&w=300&q=80" alt="Pastel Block Shirt"><h3>Pastel Block Shirt</h3><div class="price">₹995</div><p>Differently colored pastel blocks for cheerful moods.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1469398715555-76331e5e4196?auto=format&fit=crop&w=300&q=80" alt="Mint Grid Shirt"><h3>Mint Grid Shirt</h3><div class="price">₹899</div><p>Mint with grid line overlay—fresh and bright.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=300&q=80" alt="Rose Twill Shirt"><h3>Rose Twill Shirt</h3><div class="price">₹1260</div><p>Dusty rose color in crisp twill weave.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=300&q=80" alt="Cyan Geometric Shirt"><h3>Cyan Geometric Shirt</h3><div class="price">₹1099</div><p>Low-key geometric cyan design for subtle style.</p></div>
+    </div>
+
+    <!-- Aspherical Trousers (20 designs) -->
+    <div id="trousers-section" class="designs-section">
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519864601643-13ba1c7a0b98?auto=format&fit=crop&w=300&q=80" alt="Green Chinos"><h3>Green Chinos</h3><div class="price">₹1090</div><p>Earthy green, modern fit – comfort for every day.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1469398715555-76331e5e4196?auto=format&fit=crop&w=300&q=80" alt="Graphite Slim Trousers"><h3>Graphite Slim Trousers</h3><div class="price">₹1290</div><p>Graphite grey, precision tailored silhouette.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=300&q=80" alt="Khaki Commute Pants"><h3>Khaki Commute Pants</h3><div class="price">₹1200</div><p>Crisp khaki for business or weekend adventures.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Blue Linen Trousers"><h3>Blue Linen Trousers</h3><div class="price">₹1150</div><p>Lightweight blue linen for cool casual style.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05c?auto=format&fit=crop&w=300&q=80" alt="Sandy Beige Slims"><h3>Sandy Beige Slims</h3><div class="price">₹1049</div><p>Beige trousers, modern fit with classic appeal.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519455953755-af066f52f1ea?auto=format&fit=crop&w=300&q=80" alt="Rust Cargo Pants"><h3>Rust Cargo Pants</h3><div class="price">₹1350</div><p>Functional cargo pockets in rusty orange tones.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1475189778702-5ec9941484ae?auto=format&fit=crop&w=300&q=80" alt="Urban Plaid Trousers"><h3>Urban Plaid Trousers</h3><div class="price">₹1195</div><p>Bold black and grey plaid for urban looks.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=300&q=80" alt="Charcoal Formal Pants"><h3>Charcoal Formal Pants</h3><div class="price">₹1490</div><p>Charcoal with sharp tailoring for boardroom style.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Oat Slim Trousers"><h3>Oat Slim Trousers</h3><div class="price">₹1090</div><p>Neutral oat/cream for a versatile wardrobe staple.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1530845641016-29d2236b7b36?auto=format&fit=crop&w=300&q=80" alt="Street Grey Joggers"><h3>Street Grey Joggers</h3><div class="price">₹890</div><p>Urban jogger style in soft structured grey fabric.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=300&q=80" alt="Jet Slims"><h3>Jet Slims</h3><div class="price">₹1099</div><p>Deep black, modern slim stationery, everyday use.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Ice Blue Trousers"><h3>Ice Blue Trousers</h3><div class="price">₹1349</div><p>Light blue, perfect for cool summer fits.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=300&q=80" alt="Classic Tan Pants"><h3>Classic Tan Pants</h3><div class="price">₹1090</div><p>Tan trousers for all-season versatility.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=300&q=80" alt="Stone Chinos"><h3>Stone Chinos</h3><div class="price">₹1195</div><p>Neutral stone color and modern fit.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519455953755-af066f52f1ea?auto=format&fit=crop&w=300&q=80" alt="Brick Red Joggers"><h3>Brick Red Joggers</h3><div class="price">₹1280</div><p>Rusty red joggers for sporty street style.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80" alt="Steel Blue Trousers"><h3>Steel Blue Trousers</h3><div class="price">₹1350</div><p>Steel blue structure for a distinctive look.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05c?auto=format&fit=crop&w=300&q=80" alt="Classic Navy Pants"><h3>Classic Navy Pants</h3><div class="price">₹1190</div><p>Navy trousers ruled for formal and casual wear.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Dune Stretch Trousers"><h3>Dune Stretch Trousers</h3><div class="price">₹1049</div><p>Soft stretch sand tones for summer days.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Denim Finish Chinos"><h3>Denim Finish Chinos</h3><div class="price">₹1288</div><p>Unique hybrid: chino comfort, denim look.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=300&q=80" alt="Sable Grey Trousers"><h3>Sable Grey Trousers</h3><div class="price">₹1390</div><p>Deep sable grey, modern and structured.</p></div>
+    </div>
+
+    <!-- Full Sets (20) -->
+    <div id="sets-section" class="designs-section">
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=300&q=80" alt="Sunset Floral Set"><h3>Sunset Floral Set</h3><div class="price">₹1100</div><p>Orangey floral shirt and matching trousers set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=300&q=80" alt="Checkerboard Set"><h3>Checkerboard Set</h3><div class="price">₹1200</div><p>Bold checker shirt and matching plaid pants.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=300&q=80" alt="Modern Leaf Set"><h3>Modern Leaf Set</h3><div class="price">₹950</div><p>Mint-green leaf shirt with green chinos set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80" alt="Azure Stripe Set"><h3>Azure Stripe Set</h3><div class="price">₹1195</div><p>Azure striped shirt with navy trousers set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Wave Blue Set"><h3>Wave Blue Set</h3><div class="price">₹1400</div><p>Subtle blue shirt and matching blue pants set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=300&q=80" alt="Urban Block Set"><h3>Urban Block Set</h3><div class="price">₹1200</div><p>Color block shirt and stone color trouser set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519455953755-af066f52f1ea?auto=format&fit=crop&w=300&q=80" alt="Rust Chic Set"><h3>Rust Chic Set</h3><div class="price">₹1269</div><p>Rust colored top and jogger chic comfort set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=300&q=80" alt="Night Sky Set"><h3>Night Sky Set</h3><div class="price">₹1195</div><p>Midnight shirt and dark trousers, party ready.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1530845641016-29d2236b7b36?auto=format&fit=crop&w=300&q=80" alt="City Denim Set"><h3>City Denim Set</h3><div class="price">₹1199</div><p>Denim-look shirt matched with stretch denim pants.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1484517186945-36de5c23619d?auto=format&fit=crop&w=300&q=80" alt="Coral Waves Set"><h3>Coral Waves Set</h3><div class="price">₹1130</div><p>Coral shirt and beige chinos for a bright look.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1530845641016-29d2236b7b36?auto=format&fit=crop&w=300&q=80" alt="Stone Pastel Set"><h3>Stone Pastel Set</h3><div class="price">₹1079</div><p>Pastel block shirt with cream trousers combo.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=300&q=80" alt="Pastel Summer Set"><h3>Pastel Summer Set</h3><div class="price">₹1160</div><p>Pastel shirt and light blue summer trousers.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1519864601643-13ba1c7a0b98?auto=format&fit=crop&w=300&q=80" alt="Olive Style Set"><h3>Olive Style Set</h3><div class="price">₹1209</div><p>Olive shirt with matching olive trousers set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=300&q=80" alt="Classic Tan Set"><h3>Classic Tan Set</h3><div class="price">₹1170</div><p>Tan shirt and tan trouser clean monochrome set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=300&q=80" alt="Rose Twill Set"><h3>Rose Twill Set</h3><div class="price">₹1210</div><p>Rose shirt with matching twill trousers set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1469398715555-76331e5e4196?auto=format&fit=crop&w=300&q=80" alt="Mint Stripe Set"><h3>Mint Stripe Set</h3><div class="price">₹990</div><p>Mint grid shirt with mint chinos set.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" alt="Grey Street Set"><h3>Grey Street Set</h3><div class="price">₹1250</div><p>Grey on grey for a modern street fit.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?auto=format&fit=crop&w=300&q=80" alt="Steel Blue Set"><h3>Steel Blue Set</h3><div class="price">₹1230</div><p>Cool steel blue shirt and trousers.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05c?auto=format&fit=crop&w=300&q=80" alt="Soft Tan Set"><h3>Soft Tan Set</h3><div class="price">₹1199</div><p>Pastel tan shirt and matching pants.</p></div>
+        <div class="design-card"><img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=300&q=80" alt="Urban Form Full Set"><h3>Urban Form Full Set</h3><div class="price">₹1270</div><p>Modern white shirt and black formal trousers combo.</p></div>
+    </div>
+
+    <script>
+        function showDesigns(sectionId) {
+            document.getElementById('shirts-section').style.display = 'none';
+            document.getElementById('trousers-section').style.display = 'none';
+            document.getElementById('sets-section').style.display = 'none';
+            document.getElementById(sectionId).style.display = 'flex';
+            window.scrollTo({ top: 200, behavior: 'smooth' });
+        }
+    </script>
     <footer>
         &copy; 2025 Aspherical Vibes · All rights reserved.
     </footer>
