@@ -1,108 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Aspherical Vibes - Unique Aesthetic Apparel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body { background: linear-gradient(135deg, #16384c, #f9d423 60%); font-family: 'Segoe UI', sans-serif; margin: 0; color: #222;}
-        header { background: #222931; color: #fbfbfb; padding: 20px 0; text-align: center;}
-        .brand-intro { background: #fff8e7; margin: 0; padding: 22px 0 18px 0; text-align: center; }
-        .brand-intro h2 { color: #16384c; font-size: 2.1em; margin-bottom: 7px; margin-top: 0; }
-        .brand-intro h3 { color: #f9d423; font-size: 1.35em; margin-top: 0; margin-bottom: 12px; letter-spacing: 1px;}
-        .brand-intro p { color: #222; max-width: 730px; margin: 0 auto 6px auto; font-size: 1.1em; }
-        nav { background: #e8eaf6; padding: 12px; text-align: center;}
-        nav a { color: #16384c; text-decoration: none; font-weight: bold; margin: 0 20px; font-size: 18px; letter-spacing: 1px;}
-        .hero { text-align: center; padding: 60px 15px 40px 15px;}
-        .main-categories { display: flex; flex-wrap: wrap; justify-content: center; gap: 38px; margin-bottom: 15px;}
-        .main-category { background: #fff; border-radius: 17px; box-shadow: 0 2px 16px rgba(30,30,60,0.10); width: 300px; padding: 18px 0 32px 0; text-align: center; position: relative;}
-        .main-category img { width: 88%; border-radius: 12px; margin-bottom: 14px;}
-        .main-category h2 { color: #16384c; margin: 5px 0;}
-        .main-category button { background: #f9d423; border: none; padding: 12px 34px; border-radius: 25px; color: #16384c; font-weight: bold; font-size: 17px; cursor: pointer;}
-        .designs-section { display: none; flex-wrap: wrap; justify-content: center; gap: 34px; margin-bottom: 22px;}
-        .design-card { background: #f0f3fa; border-radius: 12px; box-shadow: 0 1px 8px rgba(30,30,60,0.08); width: 200px; padding: 12px 5px 18px 5px; text-align: center;}
-        .design-card img { width: 85%; border-radius: 10px; margin-bottom: 8px;}
-        .design-card h3 { color: #16384c; margin-bottom: 4px; margin-top: 7px;}
-        .design-card .price { font-weight: bold; color: #16384c; margin-bottom: 8px;}
-        .design-card p { color: #444; font-size: 14px;}
-        footer { background: #222931; color: #bbb; text-align: center; padding: 18px 0; }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aspherical Vibes Designs</title>
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f06, #48f);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  header {
+    background: #280137;
+    padding: 1rem 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 10px #ff0052, 0 0 20px #ff0052;
+    }
+    to {
+      text-shadow: 0 0 30px #00ffd8, 0 0 60px #00ffd8;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+  }
+
+  .btn-look {
+    background: #ff0052;
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.25rem;
+    border-radius: 40px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px #ff0052;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-look:hover {
+    background-color: #ff3399;
+    box-shadow: 0 0 50px #ff3399;
+  }
+
+  #designGallery {
+    margin-top: 3rem;
+    display: none;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .design-category {
+    margin-bottom: 2rem;
+  }
+
+  .design-category h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff3f3;
+    text-shadow: 0 0 10px #ff3399;
+  }
+
+  .images-grid {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .images-grid img {
+    border-radius: 15px;
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+    box-shadow: 0 0 15px #f06292;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .images-grid img:hover {
+    transform: scale(1.1) rotate(4deg);
+    box-shadow: 0 0 30px #00ffc8;
+  }
+</style>
 </head>
 <body>
-    <div class="brand-intro">
-        <h2>Aspherical Vibes</h2>
-        <h3>Wear Your Story.</h3>
-        <p>
-        Aspherical Vibes is where bold design meets everyday comfort. We create statement shirts and trousers that blend vibrant aesthetics with versatile wearability—perfect for those who dress with purpose and personality. Whether you're chasing sunsets or leading boardroom brainstorms, our pieces are crafted to move with you and speak for you.
-        </p>
-    </div>
-    <header>
-        <h1>Aspherical Vibes</h1>
-        <p>Redefining Fashion · Unique Shirts & Trousers</p>
-    </header>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Shop</a>
-        <a href="#">Design Gallery</a>
-        <a href="#">Contact</a>
-    </nav>
-    <div class="hero">
-        <h2>Discover Your Next Aesthetic!</h2>
-        <p>Explore bold shirt and trouser designs—crafted for the modern wardrobe. Shop the new Aspherical Vibes collection today.</p>
-    </div>
-    <div class="main-categories">
-        <div class="main-category">
-            <img src="images/Ts1.jpg.jpg" alt="Aesthetic Shirt 1"><h2>Aesthetic Shirts</h2>
-            <p>Browse stylish premium shirt designs for every personality.</p>
-            <button onclick="showDesigns('shirts-section')">Look for designs</button>
-        </div>
-        <div class="main-category">
-            <img src="images/Tt1.jpg.jpg" alt="Aspherical Trousers 1"><h2>Aspherical Trousers</h2>
-            <p>Explore unique and trendy trouser styles, from formal to casual.</p>
-            <button onclick="showDesigns('trousers-section')">Look for designs</button>
-        </div>
-        <div class="main-category">
-            <img src="images/Tt2.jpg.jpg" alt="Full Set"><h2>Full Sets</h2>
-            <p>Get the perfectly matched shirt and trouser sets for a complete look.</p>
-            <button onclick="showDesigns('sets-section')">Look for designs</button>
-        </div>
+
+<header>Aspherical Vibes - Wear Your Story</header>
+
+<div class="container">
+  <button class="btn-look" id="lookForDesignsBtn">Look for Designs</button>
+  
+  <section id="designGallery">
+    <div class="design-category" id="shirts">
+      <h2>Asthetic Shirts</h2>
+      <div class="images-grid" id="shirtsGrid">
+        <!-- Shirt images will be inserted here by JS -->
+      </div>
     </div>
 
-    <!-- Aesthetic Shirts -->
-    <div id="shirts-section" class="designs-section">
-        <div class="design-card"><img src="images/Ts1.jpg.jpg" alt="Shirt 1"><h3>Aesthetic Shirt 1</h3><div class="price">₹1099</div><p>Elegant floral pattern in pink and purple.</p></div>
-        <div class="design-card"><img src="images/Ts2.jpg.jpg" alt="Shirt 2"><h3>Aesthetic Shirt 2</h3><div class="price">₹1050</div><p>Trendy multi-design set for any vibe.</p></div>
-        <div class="design-card"><img src="images/Ts3.jpg.jpg" alt="Shirt 3"><h3>Aesthetic Shirt 3</h3><div class="price">₹990</div><p>Contemporary monochrome for minimal lovers.</p></div>
-        <div class="design-card"><img src="images/Ts4.jpg.jpg" alt="Shirt 4"><h3>Aesthetic Shirt 4</h3><div class="price">₹1250</div><p>Assorted premium textures and prints.</p></div>
-        <div class="design-card"><img src="images/Ts5.jpg.jpg" alt="Shirt 5"><h3>Aesthetic Shirt 5</h3><div class="price">₹1150</div><p>Bright ethnic motif with bold colors.</p></div>
-        <div class="design-card"><img src="images/Ts6.jpg.jpg" alt="Shirt 6"><h3>Aesthetic Shirt 6</h3><div class="price">₹1190</div><p>Fun graphic with playful abstract lines.</p></div>
-        <div class="design-card"><img src="images/Ts7.jpg.jpg" alt="Shirt 7"><h3>Aesthetic Shirt 7</h3><div class="price">₹1170</div><p>Color block perfection for statement fits.</p></div>
-        <div class="design-card"><img src="images/Ts8.jpg.jpg" alt="Festive Fusion Shirt"><h3>Festive Fusion Shirt</h3><div class="price">₹1299</div><p>Celebratory floral and vibrant festival motifs—perfect for special occasions and parties.</p></div>
+    <div class="design-category" id="trousers">
+      <h2>Aspherical Trousers</h2>
+      <div class="images-grid" id="trousersGrid">
+        <!-- Trousers images will be inserted here by JS -->
+      </div>
     </div>
+  </section>
+</div>
 
-    <!-- Trousers -->
-    <div id="trousers-section" class="designs-section">
-        <div class="design-card"><img src="images/Tt1.jpg.jpg" alt="Trouser 1"><h3>Patchwork Joggers</h3><div class="price">₹1299</div><p>Bespoke patchwork for creative looks.</p></div>
-        <div class="design-card"><img src="images/Tt2.jpg.jpg" alt="Trouser 2"><h3>Summer Striped Pants</h3><div class="price">₹1130</div><p>Classic summer stripes for an airy style.</p></div>
-        <div class="design-card"><img src="images/Tt3.jpg.jpg" alt="Trouser 3"><h3>Velvet Embroidered Pants</h3><div class="price">₹1500</div><p>Luxury velvet with elegant embroidery.</p></div>
-    </div>
+<script>
+  // Image filenames follow naming pattern: Ts for shirts, Tt for trousers, each with numbers
+  const shirtImages = ['Ts1.jpg.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'];
+  const trousersImages = ['Tt1.jpg.jpg', 'Tt2.jpg.jpg', 'Tt3.jpg.jpg', 'Tt4.jpg.jpg'];
 
-    <!-- Full Sets Example -->
-    <div id="sets-section" class="designs-section">
-        <div class="design-card"><img src="images/Ts1.jpg.jpg" alt="Full Set"><h3>Signature Full Set</h3><div class="price">₹2200</div><p>Matching set for ultimate balance.</p></div>
-    </div>
+  const shirtsGrid = document.getElementById('shirtsGrid');
+  const trousersGrid = document.getElementById('trousersGrid');
+  const designGallery = document.getElementById('designGallery');
+  const lookBtn = document.getElementById('lookForDesignsBtn');
 
-    <script>
-        function showDesigns(sectionId) {
-            document.getElementById('shirts-section').style.display = 'none';
-            document.getElementById('trousers-section').style.display = 'none';
-            document.getElementById('sets-section').style.display = 'none';
-            document.getElementById(sectionId).style.display = 'flex';
-            window.scrollTo({ top: 200, behavior: 'smooth' });
-        }
-    </script>
-    <footer>
-        &copy; 2025 Aspherical Vibes · All rights reserved.
-    </footer>
+  // Function to create image elements and add to container
+  function addImagesToGrid(images, container, folder = 'images/') {
+    container.innerHTML = ''; // Clear existing images
+    images.forEach(imgName => {
+      const imgElem = document.createElement('img');
+      imgElem.src = folder + imgName;
+      imgElem.alt = imgName.split('.')[0];
+      container.appendChild(imgElem);
+    });
+  }
+
+  // Add images to grids by default (hidden)
+  addImagesToGrid(shirtImages, shirtsGrid);
+  addImagesToGrid(trousersImages, trousersGrid);
+
+  // Show gallery with animation when button clicked
+  lookBtn.addEventListener('click', () => {
+    if (designGallery.style.display === 'none' || designGallery.style.display === '') {
+      designGallery.style.display = 'block';
+      // Smooth scroll to gallery
+      designGallery.scrollIntoView({behavior: 'smooth'});
+    } else {
+      designGallery.style.display = 'none';
+    }
+  });
+</script>
+
 </body>
 </html>
