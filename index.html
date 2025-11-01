@@ -3,73 +3,65 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Aspherical Vibes – Futuristic Gallery</title>
-<link href="https://fonts.googleapis.com/css?family=Orbitron:wght@500;700|Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<title>Aspherical Vibes – Modern Gallery</title>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
   body {
-    background: linear-gradient(135deg, #13131a 80%, #21a1ff 100%);
-    margin: 0;
+    background: linear-gradient(135deg, #f0f4f8, #dbe9f4);
+    color: #222;
     font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ecf6fa;
     min-height: 100vh;
     overflow-x: hidden;
   }
   header {
-    background: rgba(19,19,26,0.85);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 32px #21a1ff70;
+    background: #ffffffcc;
+    box-shadow: 0 4px 16px #a7b8cbcc;
     text-align: center;
-    padding: 38px 0 14px;
+    padding: 28px 0 14px;
+    border-radius: 0 0 18px 18px;
   }
   header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.8rem;
-    letter-spacing: 6px;
+    font-size: 3.6rem;
     font-weight: 700;
-    color: #21a1ff;
     margin: 0 0 10px 0;
-    text-shadow: 0 0 20px #21a1ff99, 2px 2px 6px #000;
+    color: #28527a;
+    letter-spacing: 3px;
   }
   .tagline {
     font-size: 1.35rem;
-    color: #fffce0;
+    color: #4a658d;
     font-style: italic;
     letter-spacing: 2px;
-    font-family: 'Orbitron', sans-serif;
     margin-bottom: 12px;
-    text-shadow: 0 2px 16px #21a1ff70;
   }
   nav {
     display: flex;
     justify-content: center;
-    gap: 34px;
-    margin: 0 0 38px 0;
+    gap: 32px;
+    margin: 0 0 35px 0;
   }
   nav a {
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    color: #e6ebf7;
-    background: rgba(33,161,255,0.11);
-    padding: 8px 22px;
-    border-radius: 22px;
-    letter-spacing: 1.2px;
-    transition: all 0.18s;
-    font-weight: 700;
+    color: #546e7a;
+    padding: 8px 20px;
+    border-radius: 18px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
   }
   nav a:hover {
-    color: #13131a;
-    background: #21a1ff;
+    background-color: #28527a;
+    color: #fff;
   }
   .overview {
     max-width: 830px;
     margin: 30px auto 45px auto;
-    padding: 1.2em 18px;
+    padding: 1.2rem 2rem;
+    background: #ffffffcc;
+    color: #3a4a62;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px #abc7e600;
     text-align: center;
-    border-radius: 24px;
-    background: rgba(33,161,255,0.08);
-    box-shadow: 0 2px 16px #0006;
-    font-size: 1.21rem;
-    backdrop-filter: blur(4px);
+    font-size: 1.18rem;
   }
   .sections {
     display: flex;
@@ -79,100 +71,76 @@
     margin: 40px 0 70px 0;
   }
   .section {
-    background: rgba(24,24,36,0.97);
+    background: #ffffffdd;
     border-radius: 18px;
-    box-shadow: 0 3px 48px #21a1ff28;
-    padding: 38px 32px 30px 32px;
-    min-width: 318px;
-    max-width: 392px;
+    box-shadow: 0 6px 28px #abc7e640;
+    padding: 36px 28px 28px 28px;
+    max-width: 400px;
+    min-width: 320px;
     text-align: center;
     position: relative;
-    overflow: hidden;
+    color: #1d2c3e;
   }
   .section h2 {
-    color: #21a1ff;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 16px;
-    margin-top: 0;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
+    color: #28527a;
   }
   .btn-design {
-    background: linear-gradient(90deg, #21a1ff 60%, #8123fd 100%);
+    background-color: #3e7cb1;
     border: none;
-    padding: 12px 38px;
-    border-radius: 30px;
-    color: #fff;
+    padding: 14px 38px;
+    border-radius: 32px;
+    color: white;
     font-weight: 700;
     font-size: 1.13rem;
     cursor: pointer;
-    margin-bottom: 12px;
-    box-shadow: 0 3px 24px #21a1ff40;
-    transition: background 0.26s, color 0.26s, transform 0.15s;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 18px #3a75b87f;
+    transition: background-color 0.3s, transform 0.2s;
   }
   .btn-design:hover {
-    background: linear-gradient(90deg, #45f7c6 60%, #21a1ff 100%);
-    color: #13131a;
-    transform: translateY(-3px) scale(1.07);
+    background-color: #28527a;
+    transform: scale(1.05);
   }
   .gallery {
-    margin-top: 22px;
+    margin-top: 20px;
     display: none;
     opacity: 0;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 24px;
-    transition: opacity 0.7s cubic-bezier(.29,.62,.49,1.32);
+    gap: 26px;
+    transition: opacity 0.5s ease;
   }
   .gallery.visible {
     display: flex;
     opacity: 1;
-    animation: fadein .75s;
-  }
-  @keyframes fadein {
-    0% {opacity:0;}
-    100% {opacity:1;}
   }
   .gallery img {
-    width: 168px;
-    height: 230px;
-    border-radius: 17px;
+    width: 180px;
+    height: 260px;
+    border-radius: 14px;
     object-fit: cover;
-    box-shadow: 0 6px 40px #21a1ff39;
-    filter: brightness(0.98) saturate(1.12);
+    box-shadow: 0 8px 26px rgba(40,82,122,0.25);
+    filter: none;
     cursor: pointer;
-    transition: transform 0.35s, box-shadow 0.27s;
-    background: linear-gradient(120deg, #21a1ff6a, #11181fa2);
+    transition: transform 0.35s ease, box-shadow 0.3s ease;
+    background: #f8fbff;
   }
   .gallery img:hover {
-    transform: scale(1.1) rotate(4deg);
-    box-shadow: 0 2px 85px #45f7c658, 0 2px 28px #21a1ff80;
-    filter: brightness(1.13) saturate(1.37);
+    transform: scale(1.1);
+    box-shadow: 0 12px 48px rgba(40,82,122,0.5);
+    filter: brightness(1.1);
     z-index: 2;
   }
   footer {
     text-align: center;
-    color: #82d0fa;
-    background: transparent;
-    padding: 34px 0 28px 0;
+    padding: 30px 0 24px 0;
     font-size: 1rem;
-    letter-spacing: 2px;
-    text-shadow: 0 3px 12px #13131a, 0 1px 3px #21a1ff70;
-  }
-  /* Glass effect card layer */
-  .section::before {
-    content: '';
-    position: absolute;
-    top: -85px;
-    left: -120px;
-    width: 180%;
-    height: 110%;
-    background: linear-gradient(145deg, #21a1ff33 10%, #fff0 85%);
-    filter: blur(25px);
-    opacity: 0.45;
-    z-index: 0;
-    pointer-events: none;
+    letter-spacing: 1.8px;
+    color: #3a4a62;
   }
 </style>
 </head>
@@ -218,10 +186,9 @@
 <footer>© 2025 Aspherical Vibes. A Vision by Gen Z, for the next generation.</footer>
 
 <script>
-  // Your updated image files with single .jpg extension
-  const shirtsGallery = ['Ts1.jpg','Ts2.jpg','Ts3.jpg','Ts5.jpg','Ts6.jpg','Ts7.jpg'];
-  const trousersGallery = ['Tt2.jpg','Tt3.jpg'];
-  const fullsetGallery = []; // Add fullset images here if available
+  const shirtsGallery = ['Ts1.jpg', 'Ts2.jpg', 'Ts3.jpg', 'Ts5.jpg', 'Ts6.jpg', 'Ts7.jpg'];
+  const trousersGallery = ['Tt2.jpg', 'Tt3.jpg'];
+  const fullsetGallery = []; // Populate if you have images
 
   const images = {
     shirtsGallery,
@@ -229,7 +196,6 @@
     fullsetGallery
   };
 
-  // Populate galleries
   for (const galleryId in images) {
     const gallery = document.getElementById(galleryId);
     images[galleryId].forEach(filename => {
@@ -240,7 +206,6 @@
     });
   }
 
-  // Show/hide galleries on button click
   document.querySelectorAll('.btn-design').forEach(button => {
     button.addEventListener('click', () => {
       const target = button.getAttribute('data-target');
