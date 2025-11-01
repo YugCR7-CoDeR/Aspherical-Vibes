@@ -7,54 +7,61 @@
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #8e2de2, #4a00e0);
-    color: #fff;
+    background: linear-gradient(135deg, #ffdd00, #d4af37, #ffea85);
+    color: #3c1a00;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
   }
 
   header {
-    background: #1b0032;
-    padding: 1rem 2rem;
+    background: #6a4b00;
+    padding: 1.2rem 2rem;
     text-align: center;
-    font-weight: bold;
-    font-size: 2.5rem;
-    letter-spacing: 3px;
-    animation: glow 3s ease-in-out infinite alternate;
+    font-weight: 900;
+    font-size: 2.7rem;
+    letter-spacing: 4px;
+    color: #fff7b1;
+    text-shadow: 0 0 12px #ffd700, 0 0 22px #ffe066;
+    animation: sparkle 3s ease-in-out infinite alternate;
   }
 
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #ff0088, 0 0 20px #ff0088;
+  @keyframes sparkle {
+    0% {
+      text-shadow: 0 0 10px #ffdb58, 0 0 20px #ffdb58;
     }
-    to {
-      text-shadow: 0 0 30px #00fff7, 0 0 60px #00fff7;
+    50% {
+      text-shadow: 0 0 30px #fdda0d, 0 0 60px #fdda0d;
+    }
+    100% {
+      text-shadow: 0 0 15px #ffec8b, 0 0 35px #ffec8b;
     }
   }
 
   .container {
-    max-width: 1100px;
-    margin: 2rem auto;
+    max-width: 1200px;
+    margin: 3rem auto;
     padding: 0 20px;
     text-align: center;
   }
 
   .btn-look {
-    background: #ff0088;
+    background: #a67c00;
     border: none;
-    padding: 1rem 3rem;
-    font-size: 1.5rem;
+    padding: 1.2rem 3.2rem;
+    font-size: 1.4rem;
     border-radius: 40px;
-    color: white;
+    color: #fff7b1;
     cursor: pointer;
-    box-shadow: 0 0 20px #ff0088;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 25px #e6c200;
+    font-weight: 700;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
   }
 
   .btn-look:hover {
-    background-color: #ff44bb;
-    box-shadow: 0 0 40px #ff44bb;
+    background-color: #d4af37;
+    box-shadow: 0 0 60px #ffee6b;
+    color: #6a4b00;
   }
 
   #designGallery {
@@ -62,25 +69,26 @@
     opacity: 0;
     visibility: hidden;
     max-height: 0;
-    transition: opacity 0.7s ease, max-height 0.7s ease;
+    transition: opacity 0.8s ease, max-height 0.8s ease;
     overflow: hidden;
   }
 
   #designGallery.visible {
     opacity: 1;
     visibility: visible;
-    max-height: 2000px; /* enough to show content smoothly */
+    max-height: 3000px;
   }
 
   .design-category {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
 
   .design-category h2 {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
-    color: #ffe6f0;
-    text-shadow: 0 0 15px #ff44bb;
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: #5a3900;
+    text-shadow: 0 0 10px #aa8c00;
+    font-weight: 800;
   }
 
   .images-grid {
@@ -95,14 +103,14 @@
     width: 180px;
     height: 240px;
     object-fit: cover;
-    box-shadow: 0 0 20px #ff66b3;
+    box-shadow: 0 0 25px #bfa233;
     cursor: pointer;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
   .images-grid img:hover {
     transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 0 40px #00fff7;
+    box-shadow: 0 0 45px #ffd54f;
   }
 </style>
 </head>
@@ -112,31 +120,34 @@
 
 <div class="container">
   <button class="btn-look" id="lookForDesignsBtn">Look for Designs</button>
-  
+
   <section id="designGallery" aria-live="polite" aria-atomic="true">
     <div class="design-category" id="shirts">
       <h2>Asthetic Shirts</h2>
-      <div class="images-grid" id="shirtsGrid">
-        <!-- Shirt images inserted here -->
-      </div>
+      <div class="images-grid" id="shirtsGrid"></div>
     </div>
 
     <div class="design-category" id="trousers">
       <h2>Aspherical Trousers</h2>
-      <div class="images-grid" id="trousersGrid">
-        <!-- Trousers images inserted here -->
-      </div>
+      <div class="images-grid" id="trousersGrid"></div>
+    </div>
+
+    <div class="design-category" id="fullset">
+      <h2>Full Set</h2>
+      <div class="images-grid" id="fullsetGrid"></div>
     </div>
   </section>
 </div>
 
 <script>
-  // Adjust the following arrays if your actual images have double extension (.jpg.jpg)
-  const shirtImages = ['Ts1.jpg', 'Ts2.jpg', 'Ts3.jpg', 'Ts4.jpg'];
-  const trousersImages = ['Tt1.jpg', 'Tt2.jpg', 'Tt3.jpg', 'Tt4.jpg'];
+  // Adjust these arrays if your actual filenames are different, including double extensions if any
+  const shirtImages = ['Ts1.jpg.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'];
+  const trousersImages = ['Tt1.jpg.jpg', 'Tt2.jpg.jpg', 'Tt3.jpg.jpg', 'Tt4.jpg.jpg'];
+  const fullsetImages = ['Fs1.jpg.jpg', 'Fs2.jpg.jpg', 'Fs3.jpg.jpg'];
 
   const shirtsGrid = document.getElementById('shirtsGrid');
   const trousersGrid = document.getElementById('trousersGrid');
+  const fullsetGrid = document.getElementById('fullsetGrid');
   const designGallery = document.getElementById('designGallery');
   const lookBtn = document.getElementById('lookForDesignsBtn');
 
@@ -152,6 +163,7 @@
 
   addImagesToGrid(shirtImages, shirtsGrid);
   addImagesToGrid(trousersImages, trousersGrid);
+  addImagesToGrid(fullsetImages, fullsetGrid);
 
   lookBtn.addEventListener('click', () => {
     if (designGallery.classList.contains('visible')) {
@@ -165,3 +177,4 @@
 
 </body>
 </html>
+
