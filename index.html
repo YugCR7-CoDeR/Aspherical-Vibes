@@ -44,10 +44,6 @@
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
   }
 
-  .overview strong {
-    color: #f9d423;
-  }
-
   .container {
     max-width: 900px;
     margin: 0 auto 60px auto;
@@ -140,11 +136,7 @@
 </header>
 
 <section class="overview">
-  <p><strong>Name:</strong> Aspherical Vibes</p>
-  <p><strong>Tagline:</strong> Wear Your Story.</p>
-  <p><strong>Overview:</strong><br>
-    Aspherical Vibes is where bold design meets everyday comfort. We create statement shirts and trousers that blend vibrant aesthetics with versatile wearability—perfect for those who dress with purpose and personality. Whether you're chasing sunsets or leading boardroom brainstorms, our pieces are crafted to move with you and speak for you.
-  </p>
+  <p>Aspherical Vibes is where bold design meets everyday comfort. We create statement shirts and trousers that blend vibrant aesthetics with versatile wearability—perfect for those who dress with purpose and personality. Whether you're chasing sunsets or leading boardroom brainstorms, our pieces are crafted to move with you and speak for you.</p>
 </section>
 
 <div class="container">
@@ -174,9 +166,8 @@
 <footer>© 2025 Aspherical Vibes. All rights reserved.</footer>
 
 <script>
-  // Image lists - update file names/extensions as needed
   const images = {
-    shirtsGallery: ['Ts1.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'],
+    shirtsGallery: ['Ts1.jpg.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'],
     trousersGallery: ['Tt1.jpg.jpg', 'Tt2.jpg.jpg', 'Tt3.jpg.jpg', 'Tt4.jpg.jpg'],
     fullsetGallery: ['Fs1.jpg.jpg', 'Fs2.jpg.jpg', 'Fs3.jpg.jpg']
   };
@@ -191,7 +182,6 @@
     });
   }
 
-  // Toggle gallery visibility with fade effect and hide others
   document.querySelectorAll('.btn-design').forEach(button => {
     button.addEventListener('click', () => {
       const target = button.getAttribute('data-target');
@@ -212,4 +202,3 @@
 
 </body>
 </html>
-
