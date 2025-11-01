@@ -3,179 +3,233 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Aspherical Vibes - Design Gallery</title>
+<title>Aspherical Vibes – Futuristic Gallery</title>
+<link href="https://fonts.googleapis.com/css?family=Orbitron:wght@500;700|Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <style>
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #13131a 80%, #21a1ff 100%);
     margin: 0;
-    padding: 0;
-    background: linear-gradient(135deg, #16384c, #f9d423 60%);
-    color: #222;
+    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ecf6fa;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
-
   header {
-    background: transparent;
-    padding: 30px 0 10px 0;
+    background: rgba(19,19,26,0.85);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 32px #21a1ff70;
     text-align: center;
-    color: #fff7b1;
-    text-shadow: 1px 1px 6px #000;
-    font-weight: 900;
-    font-size: 3rem;
-    letter-spacing: 3px;
-    margin-bottom: 0;
+    padding: 38px 0 14px;
   }
-
-  header .tagline {
-    font-weight: 500;
-    font-size: 1.5rem;
-    margin-top: -10px;
-    margin-bottom: 25px;
-    color: #fffae1;
-    text-shadow: 1px 1px 4px #222;
+  header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.8rem;
+    letter-spacing: 6px;
+    font-weight: 700;
+    color: #21a1ff;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 20px #21a1ff99, 2px 2px 6px #000;
   }
-
+  .tagline {
+    font-size: 1.35rem;
+    color: #fffce0;
+    font-style: italic;
+    letter-spacing: 2px;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 16px #21a1ff70;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 34px;
+    margin: 0 0 38px 0;
+  }
+  nav a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: #e6ebf7;
+    background: rgba(33,161,255,0.11);
+    padding: 8px 22px;
+    border-radius: 22px;
+    letter-spacing: 1.2px;
+    transition: all 0.18s;
+    font-weight: 700;
+  }
+  nav a:hover {
+    color: #13131a;
+    background: #21a1ff;
+  }
   .overview {
-    max-width: 900px;
-    margin: 0 auto 40px auto;
+    max-width: 830px;
+    margin: 30px auto 45px auto;
+    padding: 1.2em 18px;
     text-align: center;
-    color: #fff;
-    font-size: 1.15rem;
-    line-height: 1.6;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    border-radius: 24px;
+    background: rgba(33,161,255,0.08);
+    box-shadow: 0 2px 16px #0006;
+    font-size: 1.21rem;
+    backdrop-filter: blur(4px);
   }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto 60px auto;
-    padding: 0 20px;
-  }
-
   .sections {
     display: flex;
-    flex-direction: column;
-    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 44px;
+    margin: 40px 0 70px 0;
   }
-
   .section {
-    background: rgba(255,255,255,0.92);
-    border-radius: 16px;
-    box-shadow: 0 2px 20px rgba(30,30,60,0.15);
-    padding: 25px 30px 50px 30px;
+    background: rgba(24,24,36,0.97);
+    border-radius: 18px;
+    box-shadow: 0 3px 48px #21a1ff28;
+    padding: 38px 32px 30px 32px;
+    min-width: 318px;
+    max-width: 392px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
   }
-
   .section h2 {
-    color: #16384c;
-    font-size: 2rem;
-    margin-bottom: 18px;
+    color: #21a1ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.6rem;
     font-weight: 700;
+    margin-bottom: 16px;
+    margin-top: 0;
+    letter-spacing: 2px;
   }
-
   .btn-design {
-    background: #f9d423;
+    background: linear-gradient(90deg, #21a1ff 60%, #8123fd 100%);
     border: none;
-    padding: 12px 30px;
-    border-radius: 28px;
-    color: #16384c;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 0 10px #d6c128;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .btn-design:hover {
-    background: #d6c128;
+    padding: 12px 38px;
+    border-radius: 30px;
     color: #fff;
+    font-weight: 700;
+    font-size: 1.13rem;
+    cursor: pointer;
+    margin-bottom: 12px;
+    box-shadow: 0 3px 24px #21a1ff40;
+    transition: background 0.26s, color 0.26s, transform 0.15s;
   }
-
+  .btn-design:hover {
+    background: linear-gradient(90deg, #45f7c6 60%, #21a1ff 100%);
+    color: #13131a;
+    transform: translateY(-3px) scale(1.07);
+  }
   .gallery {
     margin-top: 22px;
     display: none;
     opacity: 0;
-    transition: opacity 0.5s ease;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
+    transition: opacity 0.7s cubic-bezier(.29,.62,.49,1.32);
   }
-
   .gallery.visible {
     display: flex;
     opacity: 1;
+    animation: fadein .75s;
   }
-
+  @keyframes fadein {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
   .gallery img {
-    width: 180px;
-    height: 240px;
+    width: 168px;
+    height: 230px;
+    border-radius: 17px;
     object-fit: cover;
-    border-radius: 14px;
-    box-shadow: 0 0 25px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 40px #21a1ff39;
+    filter: brightness(0.98) saturate(1.12);
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.35s, box-shadow 0.27s;
+    background: linear-gradient(120deg, #21a1ff6a, #11181fa2);
   }
-
   .gallery img:hover {
-    transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 0 45px #f9d423;
+    transform: scale(1.1) rotate(4deg);
+    box-shadow: 0 2px 85px #45f7c658, 0 2px 28px #21a1ff80;
+    filter: brightness(1.13) saturate(1.37);
+    z-index: 2;
   }
-
   footer {
     text-align: center;
-    color: #fffae1;
+    color: #82d0fa;
     background: transparent;
-    padding: 20px 0 40px 0;
+    padding: 34px 0 28px 0;
     font-size: 1rem;
-    text-shadow: 1px 1px 3px #222;
+    letter-spacing: 2px;
+    text-shadow: 0 3px 12px #13131a, 0 1px 3px #21a1ff70;
+  }
+  /* Glass effect card layer */
+  .section::before {
+    content: '';
+    position: absolute;
+    top: -85px;
+    left: -120px;
+    width: 180%;
+    height: 110%;
+    background: linear-gradient(145deg, #21a1ff33 10%, #fff0 85%);
+    filter: blur(25px);
+    opacity: 0.45;
+    z-index: 0;
+    pointer-events: none;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div>Aspherical Vibes</div>
+  <h1>Aspherical Vibes</h1>
   <div class="tagline">Wear Your Story</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+  </nav>
 </header>
 
 <section class="overview">
-  <p>Aspherical Vibes is where bold design meets everyday comfort. We create statement shirts and trousers that blend vibrant aesthetics with versatile wearability—perfect for those who dress with purpose and personality. Whether you're chasing sunsets or leading boardroom brainstorms, our pieces are crafted to move with you and speak for you.</p>
+  <p>Dive into the future of self-expression. Aspherical Vibes blends boundary-pushing design with street-ready comfort. Explore limited-edition shirts, tech-inspired trousers, and futuristic fits—each piece crafted for visionaries who set trends, not follow them.</p>
 </section>
 
-<div class="container">
-  <div class="sections">
+<div class="sections">
 
-    <div class="section" id="shirtsSection">
-      <h2>Asthetic Shirts</h2>
-      <button class="btn-design" data-target="shirtsGallery">Look for Designs</button>
-      <div class="gallery" id="shirtsGallery"></div>
-    </div>
-
-    <div class="section" id="trousersSection">
-      <h2>Aspherical Trousers</h2>
-      <button class="btn-design" data-target="trousersGallery">Look for Designs</button>
-      <div class="gallery" id="trousersGallery"></div>
-    </div>
-
-    <div class="section" id="fullsetSection">
-      <h2>Full Set</h2>
-      <button class="btn-design" data-target="fullsetGallery">Look for Designs</button>
-      <div class="gallery" id="fullsetGallery"></div>
-    </div>
-
+  <div class="section" id="shirtsSection">
+    <h2>Aesthetic Shirts</h2>
+    <button class="btn-design" data-target="shirtsGallery">View Collection</button>
+    <div class="gallery" id="shirtsGallery"></div>
   </div>
+
+  <div class="section" id="trousersSection">
+    <h2>A. Vibes Trousers</h2>
+    <button class="btn-design" data-target="trousersGallery">View Collection</button>
+    <div class="gallery" id="trousersGallery"></div>
+  </div>
+
+  <div class="section" id="fullsetSection">
+    <h2>Full Sets</h2>
+    <button class="btn-design" data-target="fullsetGallery">View Collection</button>
+    <div class="gallery" id="fullsetGallery"></div>
+  </div>
+
 </div>
 
-<footer>© 2025 Aspherical Vibes. All rights reserved.</footer>
+<footer>© 2025 Aspherical Vibes. A Vision by Gen Z, for the next generation.</footer>
 
 <script>
-  const shirtsGallery = ['Ts1.jpg', 'Ts2.jpg', 'Ts3.jpg', 'Ts4.jpg'];
-  const trousersGallery = ['Tt1.jpg', 'Tt2.jpg', 'Tt3.jpg', 'Tt4.jpg'];
-  const fullsetGallery = ['Fs1.jpg', 'Fs2.jpg', 'Fs3.jpg'];
+  // Your updated image files with single .jpg extension
+  const shirtsGallery = ['Ts1.jpg','Ts2.jpg','Ts3.jpg','Ts5.jpg','Ts6.jpg','Ts7.jpg'];
+  const trousersGallery = ['Tt2.jpg','Tt3.jpg'];
+  const fullsetGallery = []; // Add fullset images here if available
 
   const images = {
-    shirtsGallery: shirtsGallery,
-    trousersGallery: trousersGallery,
-    fullsetGallery: fullsetGallery
+    shirtsGallery,
+    trousersGallery,
+    fullsetGallery
   };
 
+  // Populate galleries
   for (const galleryId in images) {
     const gallery = document.getElementById(galleryId);
     images[galleryId].forEach(filename => {
@@ -186,6 +240,7 @@
     });
   }
 
+  // Show/hide galleries on button click
   document.querySelectorAll('.btn-design').forEach(button => {
     button.addEventListener('click', () => {
       const target = button.getAttribute('data-target');
@@ -198,7 +253,7 @@
           g.classList.remove('visible');
         });
         gallery.classList.add('visible');
-        gallery.scrollIntoView({behavior: 'smooth', block: 'start'});
+        gallery.scrollIntoView({behavior: 'smooth', block: 'center'});
       }
     });
   });
