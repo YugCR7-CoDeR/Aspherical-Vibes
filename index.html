@@ -1,245 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Aspherical Vibes – Elegant Gallery</title>
-<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
-<style>
-  body {
-    background: #f5f7fa; /* light neutral */
-    color: #212121;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    min-height: 100vh;
-  }
-
-  header {
-    background: #1e88e5; /* vibrant blue */
-    padding: 28px 16px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(30,136,229,0.6);
-  }
-  header h1 {
-    font-weight: 700;
-    font-size: 3.2rem;
-    color: #fff;
-    margin: 0 0 8px 0;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .tagline {
-    color: #bbdefb;
-    font-style: italic;
-    font-weight: 500;
-    font-size: 1.3rem;
-    letter-spacing: 0.08em;
-  }
-
-  nav {
-    margin-top: 16px;
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: #e3f2fd;
-    font-weight: 600;
-    padding: 8px 20px;
-    border-radius: 24px;
-    transition: background-color 0.3s ease;
-  }
-
-  nav a:hover {
-    background-color: #1565c0;
-  }
-
-  .overview {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 24px;
-    font-size: 1.18rem;
-    text-align: center;
-    color: #444;
-    line-height: 1.6;
-  }
-  
-  .sections {
-    max-width: 950px;
-    margin: 50px auto 85px auto;
-    display: grid;
-    gap: 48px 72px;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    padding: 0 24px;
-  }
-
-  .section {
-    background: #ffffff;
-    border-radius: 24px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    padding: 38px 24px 28px 24px;
-    text-align: center;
-    transition: box-shadow 0.25s ease;
-  }
-
-  .section:hover {
-    box-shadow: 0 16px 42px rgba(30, 136, 229, 0.35);
-  }
-
-  .section h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 26px;
-    color: #1e88e5;
-  }
-
-  .btn-design {
-    background-color: #1e88e5;
-    color: #fff;
-    border: none;
-    font-size: 1.15rem;
-    font-weight: 700;
-    padding: 14px 46px;
-    border-radius: 28px;
-    cursor: pointer;
-    box-shadow: 0 6px 24px rgba(30, 136, 229, 0.5);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
-  .btn-design:hover {
-    background-color: #1565c0;
-    transform: scale(1.05);
-  }
-
-  .gallery {
-    margin-top: 24px;
-    display: none;
-    gap: 22px;
-    justify-content: center;
-    flex-wrap: wrap;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  .gallery.visible {
-    display: flex;
-    opacity: 1;
-  }
-
-  .gallery img {
-    width: 190px;
-    height: 270px;
-    border-radius: 15px;
-    object-fit: cover;
-    box-shadow: 0 8px 30px rgba(30,136,229,0.18);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.25s ease;
-    background: #f0f4f8;
-  }
-
-  .gallery img:hover {
-    transform: scale(1.13);
-    box-shadow: 0 14px 48px rgba(30,136,229,0.5);
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px 0 28px 0;
-    font-size: 1rem;
-    color: #78859a;
-    letter-spacing: 0.1em;
-    border-top: 1px solid #ddd;
-  }
-
-  @media (max-width: 480px) {
-    .btn-design {
-      padding: 12px 28px;
-      font-size: 1.05rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aspherical Vibes - Shop the Collection</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background: #f7fafc;
+      color: #18354b;
     }
-    header h1 {
-      font-size: 2.4rem;
+    .topbar {
+      background: #f2f6f9;
+      color: #5698c6;
+      font-size: 0.97rem;
+      padding: 10px 0;
+      text-align: right;
+      border-bottom: 1px solid #e3eaf2;
+      padding-right: 20px;
     }
-    .section h2 {
-      font-size: 1.6rem;
+    .topbar span { margin-left: 18px; cursor: pointer; }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 36px 10px 36px;
+      background: #fff;
+      box-shadow: 0 6px 22px #b6d3ec11;
     }
-  }
-</style>
+    .header .logo {
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: #23659a;
+      letter-spacing: 2px;
+    }
+    .search-bar input {
+      width: 260px;
+      padding: 10px 15px;
+      border: 1.5px solid #cde2f8;
+      border-radius: 17px 0 0 17px;
+      font-size: 1.1rem;
+      outline: none;
+      color: #136199;
+    }
+    .search-bar button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 0 17px 17px 0;
+      background: #23659a;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    .cart-info { display: flex; align-items: center; gap: 14px; font-size: 1.02rem; }
+    .cart-info .shopping-bag { font-size: 1.5rem; margin-left: 6px; color: #2373b2; cursor: pointer; }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #2d87c8;
+      padding: 0 16px;
+      box-shadow: 0 2px 12px #b6d3ec05;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 18px 24px;
+      font-size: 1.15rem;
+      transition: background 0.18s;
+      border-radius: 2px;
+    }
+    .navbar a:hover, .navbar a.active { background: #186092; }
+    .hero {
+      background: linear-gradient(rgba(26, 70, 125, .12), rgba(100, 173, 197, 0.09)), url('images/banner.jpg') center/cover no-repeat;
+      min-height: 370px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #1b365f;
+      position: relative;
+    }
+    .hero .cta-container {
+      background: rgba(255,255,255,0.83);
+      border-radius: 20px;
+      padding: 44px 4vw 24px 4vw;
+      box-shadow: 0 8px 28px #448fc102;
+      display: inline-block;
+    }
+    .hero .brand-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #27548d;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .hero .hero-headline {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .hero .hero-description {
+      font-size: 1.15rem;
+      color: #276174;
+      margin-bottom: 18px;
+    }
+    .hero .shop-btn {
+      background: #2373b2;
+      color: #fff;
+      border: none;
+      border-radius: 24px;
+      padding: 13px 38px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      cursor: pointer;
+      box-shadow: 0 6px 24px #1e88e518;
+      transition: background 0.22s;
+    }
+    .hero .shop-btn:hover { background: #18527c; }
+    .main-content {
+      max-width: 1200px;
+      margin: 44px auto;
+      padding: 0 24px;
+    }
+    .category-group { margin-bottom: 64px; }
+    .category-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #186092;
+      border-bottom: 2.5px solid #2d87c8;
+      display: inline-block;
+      margin-bottom: 23px;
+      letter-spacing: 1.8px;
+    }
+    .gallery-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      margin-bottom: 18px;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 22px #b6d3ec2a;
+      max-width: 226px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.23s;
+      position: relative;
+    }
+    .product-card img {
+      width: 170px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      background: #f0f4f8;
+      border: 2px solid #e4effb;
+      cursor: pointer;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .product-card:hover { box-shadow: 0 8px 40px #2373b238; }
+    .product-name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: #18354b;
+    }
+    .product-price {
+      color: #1e88e5;
+      font-weight: 700;
+      font-size: 1.09rem;
+      margin-bottom: 10px;
+    }
+    .buy-btn {
+      background: #2373b2;
+      color: #fff;
+      border: none;
+      border-radius: 18px;
+      padding: 9px 21px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.18s;
+    }
+    .buy-btn:hover { background: #186092; }
+    footer {
+      text-align: center;
+      color: #4575a2;
+      margin-top: 50px;
+      font-size: 1rem;
+      padding: 28px 0 16px 0;
+      border-top: 1px solid #daebfa;
+    }
+    /* Fullscreen image modal styles */
+    .modal {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0, 40, 90, 0.72);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      animation: fadein .23s;
+    }
+    @keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
+    .modal-content {
+      position: relative;
+      background: #fff;
+      padding: 16px;
+      border-radius: 14px;
+      box-shadow: 0 12px 48px #23659a44;
+      max-width: 95vw;
+      max-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content img {
+      max-width: 580px;
+      max-height: 77vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 0 22px #1e88e522;
+      background: #edf8ff;
+      margin: 0;
+      padding: 0;
+    }
+    .close-modal {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: #2373b2;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.32rem;
+      border: none;
+      border-radius: 22px;
+      width: 38px; height: 38px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 16px #23659a22;
+      transition: background 0.24s;
+    }
+    .close-modal:hover { background: #1e88e5; }
+    @media (max-width: 700px) {
+      .header, .main-content { padding-left: 5vw; padding-right: 5vw; }
+      .gallery-row { gap: 18px; }
+      .navbar a { padding: 10px 13px; font-size: 0.98rem; }
+      .product-card img { width: 110px; height: 148px; }
+      .modal-content img { max-width: 94vw; max-height: 66vh; }
+    }
+    @media (max-width: 480px) {
+      .header { flex-direction: column; gap: 9px; padding: 15px 6vw 6px 6vw; }
+      .search-bar input { width: 120px; font-size: 0.95rem; }
+      .category-title { font-size: 1.1rem; }
+      .brand-title, .hero-headline { font-size: 1.1rem; }
+      .hero .hero-description { font-size: 1rem; }
+      .main-content { padding: 0 3vw; }
+      .gallery-row { justify-content: center; }
+      .modal-content img { max-width: 98vw; max-height: 58vh; }
+    }
+  </style>
 </head>
 <body>
-
-<header>
-  <h1>Aspherical Vibes</h1>
-  <div class="tagline">Wear Your Story</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
+  <div class="topbar">
+    <span>Customer Service</span>
+    <span>Log In</span>
+    <span>Ship To <img src="https://lipis.github.io/flag-icon-css/flags/4x3/in.svg" alt="India" width="18" style="vertical-align:middle;"/></span>
+    <span class="shopping-bag">&#128722; Shopping Bag</span>
+  </div>
+  <div class="header">
+    <div class="logo">Aspherical Vibes</div>
+    <form class="search-bar" style="display:flex; align-items:center;">
+      <input type="text" placeholder="What can we help you find?" />
+      <button type="submit">Search</button>
+    </form>
+    <div class="cart-info">
+      <span>Wish List</span>
+      <span class="shopping-bag">&#128722;</span>
+    </div>
+  </div>
+  <nav class="navbar">
+    <a href="#" class="active">NEW</a>
+    <a href="#">MEN</a>
+    <a href="#">WOMEN</a>
+    <a href="#">KIDS</a>
+    <a href="#">OUTDOOR</a>
+    <a href="#">BAGS</a>
+    <a href="#">HOME GOODS</a>
+    <a href="#">SALE</a>
+    <a href="#">EXPLORE</a>
   </nav>
-</header>
-
-<section class="overview">
-  <p>Discover bold, expressive designs that blend style and comfort perfectly. Explore distinctive shirts, versatile trousers, and curated full sets designed to keep you ahead in the fashion game.</p>
-</section>
-
-<div class="sections">
-
-  <div class="section" id="shirtsSection">
-    <h2>Aesthetic Shirts</h2>
-    <button class="btn-design" data-target="shirtsGallery">View Collection</button>
-    <div class="gallery" id="shirtsGallery"></div>
+  <div class="hero">
+    <div class="cta-container">
+      <div class="brand-title">MOUNTAIN CLASSIC COLLECTION</div>
+      <div class="hero-headline">Elevate Your Everyday Style</div>
+      <div class="hero-description">Stand out with weatherproof smart design &amp; a look made for every adventure.<br> Shop our signature shirts and trousers, crafted for life and style.</div>
+      <button class="shop-btn">Shop the Collection</button>
+    </div>
   </div>
-
-  <div class="section" id="trousersSection">
-    <h2>Aspherical Trousers</h2>
-    <button class="btn-design" data-target="trousersGallery">View Collection</button>
-    <div class="gallery" id="trousersGallery"></div>
+  <div class="main-content">
+    <div class="category-group">
+      <div class="category-title">Men's Shirts</div>
+      <div class="gallery-row">
+        <div class="product-card">
+          <img src="images/Ts1.jpg" alt="Shirt 1">
+          <div class="product-name">Sunset Floral Shirt</div>
+          <div class="product-price">₹100</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product-card">
+          <img src="images/Ts2.jpg" alt="Shirt 2">
+          <div class="product-name">Bold Ocean Shirt</div>
+          <div class="product-price">₹100</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product-card">
+          <img src="images/Ts3.jpg" alt="Shirt 3">
+          <div class="product-name">Urban Classic Shirt</div>
+          <div class="product-price">₹100</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-title">Men's Trousers</div>
+      <div class="gallery-row">
+        <div class="product-card">
+          <img src="images/Tt2.jpg" alt="Trousers 2">
+          <div class="product-name">Navy Trousers</div>
+          <div class="product-price">₹100</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+        <div class="product-card">
+          <img src="images/Tt3.jpg" alt="Trousers 3">
+          <div class="product-name">Casual Grey Trousers</div>
+          <div class="product-price">₹100</div>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="category-group">
+      <div class="category-title">Full Sets</div>
+      <div class="gallery-row">
+        <!-- Add fullset images similarly with price ₹100 -->
+      </div>
+    </div>
   </div>
-
-  <div class="section" id="fullsetSection">
-    <h2>Full Sets</h2>
-    <button class="btn-design" data-target="fullsetGallery">View Collection</button>
-    <div class="gallery" id="fullsetGallery"></div>
+  <footer>© 2025 Aspherical Vibes. All rights reserved.</footer>
+  <!-- Modal for fullscreen image -->
+  <div id="imageModal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <button class="close-modal" id="closeModal">&#215;</button>
+      <img id="modalImg" src="#" alt="Full Image">
+    </div>
   </div>
+  <script>
+    // Full screen modal functionality
+    const imageModal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const closeModalBtn = document.getElementById('closeModal');
 
-</div>
-
-<footer>© 2025 Aspherical Vibes. All rights reserved.</footer>
-
-<script>
-  const shirtsGallery = ['Ts1.jpg', 'Ts2.jpg', 'Ts3.jpg', 'Ts5.jpg', 'Ts6.jpg', 'Ts7.jpg'];
-  const trousersGallery = ['Tt2.jpg', 'Tt3.jpg'];
-  const fullsetGallery = []; // Add your fullset images here
-  
-  const images = { shirtsGallery, trousersGallery, fullsetGallery };
-  
-  for (const galleryId in images) {
-    const gallery = document.getElementById(galleryId);
-    images[galleryId].forEach(filename => {
-      const img = document.createElement('img');
-      img.src = 'images/' + filename;
-      img.alt = filename.split('.')[0];
-      gallery.appendChild(img);
+    document.querySelectorAll('.product-card img').forEach(img => {
+      img.addEventListener('click', function () {
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+        imageModal.style.display = 'flex';
+      });
     });
-  }
 
-  document.querySelectorAll('.btn-design').forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.getAttribute('data-target');
-      const gallery = document.getElementById(target);
-
-      if (gallery.classList.contains('visible')) {
-        gallery.classList.remove('visible');
-      } else {
-        document.querySelectorAll('.gallery.visible').forEach(g => g.classList.remove('visible'));
-        gallery.classList.add('visible');
-        gallery.scrollIntoView({behavior: 'smooth', block: 'center'});
+    // Hide modal when clicking close button or outside image
+    closeModalBtn.addEventListener('click', () => {
+      imageModal.style.display = 'none';
+      modalImg.src = '#';
+    });
+    imageModal.addEventListener('click', e => {
+      if (e.target === imageModal) {
+        imageModal.style.display = 'none';
+        modalImg.src = '#';
       }
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
