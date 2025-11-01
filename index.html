@@ -14,46 +14,76 @@
   }
 
   header {
-    background: #222931;
-    color: #fbfbfb;
-    padding: 20px 0;
+    background: transparent;
+    padding: 30px 0 10px 0;
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 4px #000;
+    color: #fff7b1;
+    text-shadow: 1px 1px 6px #000;
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+  }
+
+  header .tagline {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    color: #fffae1;
+    text-shadow: 1px 1px 4px #222;
+  }
+
+  .overview {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    color: #fff;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+  }
+
+  .overview strong {
+    color: #f9d423;
   }
 
   .container {
-    max-width: 1200px;
-    margin: 30px auto;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
     padding: 0 20px;
   }
 
+  .sections {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+  }
+
   .section {
-    background: #fff;
+    background: rgba(255,255,255,0.92);
     border-radius: 16px;
-    box-shadow: 0 2px 14px rgba(30,30,60,0.08);
-    margin-bottom: 40px;
-    padding: 20px 30px 40px 30px;
+    box-shadow: 0 2px 20px rgba(30,30,60,0.15);
+    padding: 25px 30px 50px 30px;
   }
 
   .section h2 {
     color: #16384c;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+    font-size: 2rem;
+    margin-bottom: 18px;
+    font-weight: 700;
   }
 
   .btn-design {
     background: #f9d423;
     border: none;
-    padding: 10px 25px;
-    border-radius: 20px;
+    padding: 12px 30px;
+    border-radius: 28px;
     color: #16384c;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 0 0 8px #d6c128;
+    box-shadow: 0 0 10px #d6c128;
     transition: background-color 0.3s ease, color 0.3s ease;
   }
 
@@ -63,7 +93,7 @@
   }
 
   .gallery {
-    margin-top: 20px;
+    margin-top: 22px;
     display: none;
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -81,77 +111,98 @@
     width: 180px;
     height: 240px;
     object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.15);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .gallery img:hover {
-    transform: scale(1.1) rotate(4deg);
-    box-shadow: 0 0 30px #f9d423;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 45px #f9d423;
+  }
+
+  footer {
+    text-align: center;
+    color: #fffae1;
+    background: transparent;
+    padding: 20px 0 40px 0;
+    font-size: 1rem;
+    text-shadow: 1px 1px 3px #222;
   }
 </style>
 </head>
 <body>
 
-<header>Aspherical Vibes - Wear Your Story</header>
+<header>
+  <div>Aspherical Vibes</div>
+  <div class="tagline">Wear Your Story</div>
+</header>
+
+<section class="overview">
+  <p><strong>Name:</strong> Aspherical Vibes</p>
+  <p><strong>Tagline:</strong> Wear Your Story.</p>
+  <p><strong>Overview:</strong><br>
+    Aspherical Vibes is where bold design meets everyday comfort. We create statement shirts and trousers that blend vibrant aesthetics with versatile wearability—perfect for those who dress with purpose and personality. Whether you're chasing sunsets or leading boardroom brainstorms, our pieces are crafted to move with you and speak for you.
+  </p>
+</section>
 
 <div class="container">
+  <div class="sections">
 
-  <div class="section" id="shirtsSection">
-    <h2>Asthetic Shirts</h2>
-    <button class="btn-design" data-target="shirtsGallery">Look for Designs</button>
-    <div class="gallery" id="shirtsGallery"></div>
+    <div class="section" id="shirtsSection">
+      <h2>Asthetic Shirts</h2>
+      <button class="btn-design" data-target="shirtsGallery">Look for Designs</button>
+      <div class="gallery" id="shirtsGallery"></div>
+    </div>
+
+    <div class="section" id="trousersSection">
+      <h2>Aspherical Trousers</h2>
+      <button class="btn-design" data-target="trousersGallery">Look for Designs</button>
+      <div class="gallery" id="trousersGallery"></div>
+    </div>
+
+    <div class="section" id="fullsetSection">
+      <h2>Full Set</h2>
+      <button class="btn-design" data-target="fullsetGallery">Look for Designs</button>
+      <div class="gallery" id="fullsetGallery"></div>
+    </div>
+
   </div>
-
-  <div class="section" id="trousersSection">
-    <h2>Aspherical Trousers</h2>
-    <button class="btn-design" data-target="trousersGallery">Look for Designs</button>
-    <div class="gallery" id="trousersGallery"></div>
-  </div>
-
-  <div class="section" id="fullsetSection">
-    <h2>Full Set</h2>
-    <button class="btn-design" data-target="fullsetGallery">Look for Designs</button>
-    <div class="gallery" id="fullsetGallery"></div>
-  </div>
-
 </div>
 
+<footer>© 2025 Aspherical Vibes. All rights reserved.</footer>
+
 <script>
-  // Image arrays - adjust file extensions or names as needed
+  // Image lists - update file names/extensions as needed
   const images = {
     shirtsGallery: ['Ts1.jpg.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'],
     trousersGallery: ['Tt1.jpg.jpg', 'Tt2.jpg.jpg', 'Tt3.jpg.jpg', 'Tt4.jpg.jpg'],
     fullsetGallery: ['Fs1.jpg.jpg', 'Fs2.jpg.jpg', 'Fs3.jpg.jpg']
   };
 
-  // Populate all galleries on page load
   for (const galleryId in images) {
-    const galleryContainer = document.getElementById(galleryId);
-    images[galleryId].forEach(src => {
+    const gallery = document.getElementById(galleryId);
+    images[galleryId].forEach(filename => {
       const img = document.createElement('img');
-      img.src = 'images/' + src;
-      img.alt = src.split('.')[0];
-      galleryContainer.appendChild(img);
+      img.src = 'images/' + filename;
+      img.alt = filename.split('.')[0];
+      gallery.appendChild(img);
     });
   }
 
-  // Handle button clicks to toggle visibility and animate
+  // Toggle gallery visibility with fade effect and hide others
   document.querySelectorAll('.btn-design').forEach(button => {
     button.addEventListener('click', () => {
-      const targetId = button.getAttribute('data-target');
-      const gallery = document.getElementById(targetId);
+      const target = button.getAttribute('data-target');
+      const gallery = document.getElementById(target);
 
       if (gallery.classList.contains('visible')) {
         gallery.classList.remove('visible');
       } else {
-        // Hide other galleries
         document.querySelectorAll('.gallery.visible').forEach(g => {
-          if (g !== gallery) g.classList.remove('visible');
+          g.classList.remove('visible');
         });
-        // Show this gallery
         gallery.classList.add('visible');
         gallery.scrollIntoView({behavior: 'smooth', block: 'start'});
       }
