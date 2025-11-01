@@ -3,144 +3,167 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Aspherical Vibes – Modern Gallery</title>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<title>Aspherical Vibes – Elegant Gallery</title>
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 <style>
   body {
-    background: linear-gradient(135deg, #f0f4f8, #dbe9f4);
-    color: #222;
-    font-family: 'Montserrat', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa; /* light neutral */
+    color: #212121;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
     min-height: 100vh;
-    overflow-x: hidden;
   }
+
   header {
-    background: #ffffffcc;
-    box-shadow: 0 4px 16px #a7b8cbcc;
+    background: #1e88e5; /* vibrant blue */
+    padding: 28px 16px;
     text-align: center;
-    padding: 28px 0 14px;
-    border-radius: 0 0 18px 18px;
+    box-shadow: 0 3px 12px rgba(30,136,229,0.6);
   }
   header h1 {
-    font-size: 3.6rem;
     font-weight: 700;
-    margin: 0 0 10px 0;
-    color: #28527a;
-    letter-spacing: 3px;
+    font-size: 3.2rem;
+    color: #fff;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
   }
   .tagline {
-    font-size: 1.35rem;
-    color: #4a658d;
+    color: #bbdefb;
     font-style: italic;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
   }
+
   nav {
+    margin-top: 16px;
     display: flex;
     justify-content: center;
-    gap: 32px;
-    margin: 0 0 35px 0;
+    gap: 28px;
   }
+
   nav a {
     text-decoration: none;
-    color: #546e7a;
-    padding: 8px 20px;
-    border-radius: 18px;
+    color: #e3f2fd;
     font-weight: 600;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 8px 20px;
+    border-radius: 24px;
+    transition: background-color 0.3s ease;
   }
+
   nav a:hover {
-    background-color: #28527a;
-    color: #fff;
+    background-color: #1565c0;
   }
+
   .overview {
-    max-width: 830px;
-    margin: 30px auto 45px auto;
-    padding: 1.2rem 2rem;
-    background: #ffffffcc;
-    color: #3a4a62;
-    border-radius: 18px;
-    box-shadow: 0 4px 20px #abc7e600;
-    text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 24px;
     font-size: 1.18rem;
-  }
-  .sections {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 44px;
-    margin: 40px 0 70px 0;
-  }
-  .section {
-    background: #ffffffdd;
-    border-radius: 18px;
-    box-shadow: 0 6px 28px #abc7e640;
-    padding: 36px 28px 28px 28px;
-    max-width: 400px;
-    min-width: 320px;
     text-align: center;
-    position: relative;
-    color: #1d2c3e;
+    color: #444;
+    line-height: 1.6;
   }
+  
+  .sections {
+    max-width: 950px;
+    margin: 50px auto 85px auto;
+    display: grid;
+    gap: 48px 72px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    padding: 0 24px;
+  }
+
+  .section {
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    padding: 38px 24px 28px 24px;
+    text-align: center;
+    transition: box-shadow 0.25s ease;
+  }
+
+  .section:hover {
+    box-shadow: 0 16px 42px rgba(30, 136, 229, 0.35);
+  }
+
   .section h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 16px;
-    letter-spacing: 1.5px;
-    color: #28527a;
+    margin-bottom: 26px;
+    color: #1e88e5;
   }
+
   .btn-design {
-    background-color: #3e7cb1;
+    background-color: #1e88e5;
+    color: #fff;
     border: none;
-    padding: 14px 38px;
-    border-radius: 32px;
-    color: white;
+    font-size: 1.15rem;
     font-weight: 700;
-    font-size: 1.13rem;
+    padding: 14px 46px;
+    border-radius: 28px;
     cursor: pointer;
-    margin-bottom: 18px;
-    box-shadow: 0 4px 18px #3a75b87f;
-    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 6px 24px rgba(30, 136, 229, 0.5);
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }
+
   .btn-design:hover {
-    background-color: #28527a;
+    background-color: #1565c0;
     transform: scale(1.05);
   }
+
   .gallery {
-    margin-top: 20px;
+    margin-top: 24px;
     display: none;
-    opacity: 0;
+    gap: 22px;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 26px;
-    transition: opacity 0.5s ease;
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
+
   .gallery.visible {
     display: flex;
     opacity: 1;
   }
+
   .gallery img {
-    width: 180px;
-    height: 260px;
-    border-radius: 14px;
+    width: 190px;
+    height: 270px;
+    border-radius: 15px;
     object-fit: cover;
-    box-shadow: 0 8px 26px rgba(40,82,122,0.25);
-    filter: none;
+    box-shadow: 0 8px 30px rgba(30,136,229,0.18);
     cursor: pointer;
-    transition: transform 0.35s ease, box-shadow 0.3s ease;
-    background: #f8fbff;
+    transition: transform 0.3s ease, box-shadow 0.25s ease;
+    background: #f0f4f8;
   }
+
   .gallery img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 48px rgba(40,82,122,0.5);
-    filter: brightness(1.1);
-    z-index: 2;
+    transform: scale(1.13);
+    box-shadow: 0 14px 48px rgba(30,136,229,0.5);
   }
+
   footer {
     text-align: center;
-    padding: 30px 0 24px 0;
+    padding: 30px 0 28px 0;
     font-size: 1rem;
-    letter-spacing: 1.8px;
-    color: #3a4a62;
+    color: #78859a;
+    letter-spacing: 0.1em;
+    border-top: 1px solid #ddd;
+  }
+
+  @media (max-width: 480px) {
+    .btn-design {
+      padding: 12px 28px;
+      font-size: 1.05rem;
+    }
+    header h1 {
+      font-size: 2.4rem;
+    }
+    .section h2 {
+      font-size: 1.6rem;
+    }
   }
 </style>
 </head>
@@ -158,7 +181,7 @@
 </header>
 
 <section class="overview">
-  <p>Dive into the future of self-expression. Aspherical Vibes blends boundary-pushing design with street-ready comfort. Explore limited-edition shirts, tech-inspired trousers, and futuristic fits—each piece crafted for visionaries who set trends, not follow them.</p>
+  <p>Discover bold, expressive designs that blend style and comfort perfectly. Explore distinctive shirts, versatile trousers, and curated full sets designed to keep you ahead in the fashion game.</p>
 </section>
 
 <div class="sections">
@@ -170,7 +193,7 @@
   </div>
 
   <div class="section" id="trousersSection">
-    <h2>A. Vibes Trousers</h2>
+    <h2>Aspherical Trousers</h2>
     <button class="btn-design" data-target="trousersGallery">View Collection</button>
     <div class="gallery" id="trousersGallery"></div>
   </div>
@@ -183,19 +206,15 @@
 
 </div>
 
-<footer>© 2025 Aspherical Vibes. A Vision by Gen Z, for the next generation.</footer>
+<footer>© 2025 Aspherical Vibes. All rights reserved.</footer>
 
 <script>
   const shirtsGallery = ['Ts1.jpg', 'Ts2.jpg', 'Ts3.jpg', 'Ts5.jpg', 'Ts6.jpg', 'Ts7.jpg'];
   const trousersGallery = ['Tt2.jpg', 'Tt3.jpg'];
-  const fullsetGallery = []; // Populate if you have images
-
-  const images = {
-    shirtsGallery,
-    trousersGallery,
-    fullsetGallery
-  };
-
+  const fullsetGallery = []; // Add your fullset images here
+  
+  const images = { shirtsGallery, trousersGallery, fullsetGallery };
+  
   for (const galleryId in images) {
     const gallery = document.getElementById(galleryId);
     images[galleryId].forEach(filename => {
@@ -214,9 +233,7 @@
       if (gallery.classList.contains('visible')) {
         gallery.classList.remove('visible');
       } else {
-        document.querySelectorAll('.gallery.visible').forEach(g => {
-          g.classList.remove('visible');
-        });
+        document.querySelectorAll('.gallery.visible').forEach(g => g.classList.remove('visible'));
         gallery.classList.add('visible');
         gallery.scrollIntoView({behavior: 'smooth', block: 'center'});
       }
