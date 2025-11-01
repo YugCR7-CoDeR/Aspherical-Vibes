@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Aspherical Vibes Designs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aspherical Vibes - Designs</title>
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #f06, #48f);
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
     color: #fff;
     margin: 0;
     padding: 0;
@@ -15,78 +15,77 @@
   }
 
   header {
-    background: #280137;
+    background: #1b0032;
     padding: 1rem 2rem;
     text-align: center;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 2.5rem;
     letter-spacing: 3px;
     animation: glow 3s ease-in-out infinite alternate;
   }
 
   @keyframes glow {
     from {
-      text-shadow: 0 0 10px #ff0052, 0 0 20px #ff0052;
+      text-shadow: 0 0 10px #ff0088, 0 0 20px #ff0088;
     }
     to {
-      text-shadow: 0 0 30px #00ffd8, 0 0 60px #00ffd8;
+      text-shadow: 0 0 30px #00fff7, 0 0 60px #00fff7;
     }
   }
 
   .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 2rem auto;
     padding: 0 20px;
+    text-align: center;
   }
 
   .btn-look {
-    background: #ff0052;
+    background: #ff0088;
     border: none;
     padding: 1rem 3rem;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     border-radius: 40px;
     color: white;
     cursor: pointer;
-    box-shadow: 0 0 20px #ff0052;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 0 20px #ff0088;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .btn-look:hover {
-    background-color: #ff3399;
-    box-shadow: 0 0 50px #ff3399;
+    background-color: #ff44bb;
+    box-shadow: 0 0 40px #ff44bb;
   }
 
   #designGallery {
     margin-top: 3rem;
-    display: none;
-    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    transition: opacity 0.7s ease, max-height 0.7s ease;
+    overflow: hidden;
   }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  #designGallery.visible {
+    opacity: 1;
+    visibility: visible;
+    max-height: 2000px; /* enough to show content smoothly */
   }
 
   .design-category {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 
   .design-category h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 1rem;
-    color: #fff3f3;
-    text-shadow: 0 0 10px #ff3399;
+    color: #ffe6f0;
+    text-shadow: 0 0 15px #ff44bb;
   }
 
   .images-grid {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -96,14 +95,14 @@
     width: 180px;
     height: 240px;
     object-fit: cover;
-    box-shadow: 0 0 15px #f06292;
+    box-shadow: 0 0 20px #ff66b3;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
   }
 
   .images-grid img:hover {
-    transform: scale(1.1) rotate(4deg);
-    box-shadow: 0 0 30px #00ffc8;
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 40px #00fff7;
   }
 </style>
 </head>
@@ -114,56 +113,52 @@
 <div class="container">
   <button class="btn-look" id="lookForDesignsBtn">Look for Designs</button>
   
-  <section id="designGallery">
+  <section id="designGallery" aria-live="polite" aria-atomic="true">
     <div class="design-category" id="shirts">
       <h2>Asthetic Shirts</h2>
       <div class="images-grid" id="shirtsGrid">
-        <!-- Shirt images will be inserted here by JS -->
+        <!-- Shirt images inserted here -->
       </div>
     </div>
 
     <div class="design-category" id="trousers">
       <h2>Aspherical Trousers</h2>
       <div class="images-grid" id="trousersGrid">
-        <!-- Trousers images will be inserted here by JS -->
+        <!-- Trousers images inserted here -->
       </div>
     </div>
   </section>
 </div>
 
 <script>
-  // Image filenames follow naming pattern: Ts for shirts, Tt for trousers, each with numbers
-  const shirtImages = ['Ts1.jpg.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'];
-  const trousersImages = ['Tt1.jpg.jpg', 'Tt2.jpg.jpg', 'Tt3.jpg.jpg', 'Tt4.jpg.jpg'];
+  // Adjust the following arrays if your actual images have double extension (.jpg.jpg)
+  const shirtImages = ['Ts1.jpg', 'Ts2.jpg', 'Ts3.jpg', 'Ts4.jpg'];
+  const trousersImages = ['Tt1.jpg', 'Tt2.jpg', 'Tt3.jpg', 'Tt4.jpg'];
 
   const shirtsGrid = document.getElementById('shirtsGrid');
   const trousersGrid = document.getElementById('trousersGrid');
   const designGallery = document.getElementById('designGallery');
   const lookBtn = document.getElementById('lookForDesignsBtn');
 
-  // Function to create image elements and add to container
   function addImagesToGrid(images, container, folder = 'images/') {
-    container.innerHTML = ''; // Clear existing images
+    container.innerHTML = '';
     images.forEach(imgName => {
       const imgElem = document.createElement('img');
       imgElem.src = folder + imgName;
-      imgElem.alt = imgName.split('.')[0];
+      imgElem.alt = `Design image: ${imgName.split('.')[0]}`;
       container.appendChild(imgElem);
     });
   }
 
-  // Add images to grids by default (hidden)
   addImagesToGrid(shirtImages, shirtsGrid);
   addImagesToGrid(trousersImages, trousersGrid);
 
-  // Show gallery with animation when button clicked
   lookBtn.addEventListener('click', () => {
-    if (designGallery.style.display === 'none' || designGallery.style.display === '') {
-      designGallery.style.display = 'block';
-      // Smooth scroll to gallery
-      designGallery.scrollIntoView({behavior: 'smooth'});
+    if (designGallery.classList.contains('visible')) {
+      designGallery.classList.remove('visible');
     } else {
-      designGallery.style.display = 'none';
+      designGallery.classList.add('visible');
+      designGallery.scrollIntoView({behavior: 'smooth'});
     }
   });
 </script>
