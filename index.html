@@ -3,114 +3,93 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Aspherical Vibes - Designs</title>
+<title>Aspherical Vibes - Design Gallery</title>
 <style>
   body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ffdd00, #d4af37, #ffea85);
-    color: #3c1a00;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    background: linear-gradient(135deg, #16384c, #f9d423 60%);
+    color: #222;
   }
 
   header {
-    background: #6a4b00;
-    padding: 1.2rem 2rem;
+    background: #222931;
+    color: #fbfbfb;
+    padding: 20px 0;
     text-align: center;
-    font-weight: 900;
-    font-size: 2.7rem;
-    letter-spacing: 4px;
-    color: #fff7b1;
-    text-shadow: 0 0 12px #ffd700, 0 0 22px #ffe066;
-    animation: sparkle 3s ease-in-out infinite alternate;
-  }
-
-  @keyframes sparkle {
-    0% {
-      text-shadow: 0 0 10px #ffdb58, 0 0 20px #ffdb58;
-    }
-    50% {
-      text-shadow: 0 0 30px #fdda0d, 0 0 60px #fdda0d;
-    }
-    100% {
-      text-shadow: 0 0 15px #ffec8b, 0 0 35px #ffec8b;
-    }
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 4px #000;
   }
 
   .container {
     max-width: 1200px;
-    margin: 3rem auto;
+    margin: 30px auto;
     padding: 0 20px;
-    text-align: center;
   }
 
-  .btn-look {
-    background: #a67c00;
+  .section {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 14px rgba(30,30,60,0.08);
+    margin-bottom: 40px;
+    padding: 20px 30px 40px 30px;
+  }
+
+  .section h2 {
+    color: #16384c;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .btn-design {
+    background: #f9d423;
     border: none;
-    padding: 1.2rem 3.2rem;
-    font-size: 1.4rem;
-    border-radius: 40px;
-    color: #fff7b1;
-    cursor: pointer;
-    box-shadow: 0 0 25px #e6c200;
+    padding: 10px 25px;
+    border-radius: 20px;
+    color: #16384c;
     font-weight: 700;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 8px #d6c128;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  .btn-look:hover {
-    background-color: #d4af37;
-    box-shadow: 0 0 60px #ffee6b;
-    color: #6a4b00;
+  .btn-design:hover {
+    background: #d6c128;
+    color: #fff;
   }
 
-  #designGallery {
-    margin-top: 3rem;
+  .gallery {
+    margin-top: 20px;
+    display: none;
     opacity: 0;
-    visibility: hidden;
-    max-height: 0;
-    transition: opacity 0.8s ease, max-height 0.8s ease;
-    overflow: hidden;
-  }
-
-  #designGallery.visible {
-    opacity: 1;
-    visibility: visible;
-    max-height: 3000px;
-  }
-
-  .design-category {
-    margin-bottom: 4rem;
-  }
-
-  .design-category h2 {
-    font-size: 2.4rem;
-    margin-bottom: 1.5rem;
-    color: #5a3900;
-    text-shadow: 0 0 10px #aa8c00;
-    font-weight: 800;
-  }
-
-  .images-grid {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+    transition: opacity 0.5s ease;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
-  .images-grid img {
-    border-radius: 15px;
+  .gallery.visible {
+    display: flex;
+    opacity: 1;
+  }
+
+  .gallery img {
     width: 180px;
     height: 240px;
     object-fit: cover;
-    box-shadow: 0 0 25px #bfa233;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
     cursor: pointer;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  .images-grid img:hover {
-    transform: scale(1.15) rotate(5deg);
-    box-shadow: 0 0 45px #ffd54f;
+  .gallery img:hover {
+    transform: scale(1.1) rotate(4deg);
+    box-shadow: 0 0 30px #f9d423;
   }
 </style>
 </head>
@@ -119,62 +98,66 @@
 <header>Aspherical Vibes - Wear Your Story</header>
 
 <div class="container">
-  <button class="btn-look" id="lookForDesignsBtn">Look for Designs</button>
 
-  <section id="designGallery" aria-live="polite" aria-atomic="true">
-    <div class="design-category" id="shirts">
-      <h2>Asthetic Shirts</h2>
-      <div class="images-grid" id="shirtsGrid"></div>
-    </div>
+  <div class="section" id="shirtsSection">
+    <h2>Asthetic Shirts</h2>
+    <button class="btn-design" data-target="shirtsGallery">Look for Designs</button>
+    <div class="gallery" id="shirtsGallery"></div>
+  </div>
 
-    <div class="design-category" id="trousers">
-      <h2>Aspherical Trousers</h2>
-      <div class="images-grid" id="trousersGrid"></div>
-    </div>
+  <div class="section" id="trousersSection">
+    <h2>Aspherical Trousers</h2>
+    <button class="btn-design" data-target="trousersGallery">Look for Designs</button>
+    <div class="gallery" id="trousersGallery"></div>
+  </div>
 
-    <div class="design-category" id="fullset">
-      <h2>Full Set</h2>
-      <div class="images-grid" id="fullsetGrid"></div>
-    </div>
-  </section>
+  <div class="section" id="fullsetSection">
+    <h2>Full Set</h2>
+    <button class="btn-design" data-target="fullsetGallery">Look for Designs</button>
+    <div class="gallery" id="fullsetGallery"></div>
+  </div>
+
 </div>
 
 <script>
-  // Adjust these arrays if your actual filenames are different, including double extensions if any
-  const shirtImages = ['Ts1.jpg.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'];
-  const trousersImages = ['Tt1.jpg.jpg', 'Tt2.jpg.jpg', 'Tt3.jpg.jpg', 'Tt4.jpg.jpg'];
-  const fullsetImages = ['Fs1.jpg.jpg', 'Fs2.jpg.jpg', 'Fs3.jpg.jpg'];
+  // Image arrays - adjust file extensions or names as needed
+  const images = {
+    shirtsGallery: ['Ts1.jpg.jpg', 'Ts2.jpg.jpg', 'Ts3.jpg.jpg', 'Ts4.jpg.jpg'],
+    trousersGallery: ['Tt1.jpg.jpg', 'Tt2.jpg.jpg', 'Tt3.jpg.jpg', 'Tt4.jpg.jpg'],
+    fullsetGallery: ['Fs1.jpg.jpg', 'Fs2.jpg.jpg', 'Fs3.jpg.jpg']
+  };
 
-  const shirtsGrid = document.getElementById('shirtsGrid');
-  const trousersGrid = document.getElementById('trousersGrid');
-  const fullsetGrid = document.getElementById('fullsetGrid');
-  const designGallery = document.getElementById('designGallery');
-  const lookBtn = document.getElementById('lookForDesignsBtn');
-
-  function addImagesToGrid(images, container, folder = 'images/') {
-    container.innerHTML = '';
-    images.forEach(imgName => {
-      const imgElem = document.createElement('img');
-      imgElem.src = folder + imgName;
-      imgElem.alt = `Design image: ${imgName.split('.')[0]}`;
-      container.appendChild(imgElem);
+  // Populate all galleries on page load
+  for (const galleryId in images) {
+    const galleryContainer = document.getElementById(galleryId);
+    images[galleryId].forEach(src => {
+      const img = document.createElement('img');
+      img.src = 'images/' + src;
+      img.alt = src.split('.')[0];
+      galleryContainer.appendChild(img);
     });
   }
 
-  addImagesToGrid(shirtImages, shirtsGrid);
-  addImagesToGrid(trousersImages, trousersGrid);
-  addImagesToGrid(fullsetImages, fullsetGrid);
+  // Handle button clicks to toggle visibility and animate
+  document.querySelectorAll('.btn-design').forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.getAttribute('data-target');
+      const gallery = document.getElementById(targetId);
 
-  lookBtn.addEventListener('click', () => {
-    if (designGallery.classList.contains('visible')) {
-      designGallery.classList.remove('visible');
-    } else {
-      designGallery.classList.add('visible');
-      designGallery.scrollIntoView({behavior: 'smooth'});
-    }
+      if (gallery.classList.contains('visible')) {
+        gallery.classList.remove('visible');
+      } else {
+        // Hide other galleries
+        document.querySelectorAll('.gallery.visible').forEach(g => {
+          if (g !== gallery) g.classList.remove('visible');
+        });
+        // Show this gallery
+        gallery.classList.add('visible');
+        gallery.scrollIntoView({behavior: 'smooth', block: 'start'});
+      }
+    });
   });
 </script>
 
 </body>
 </html>
-
